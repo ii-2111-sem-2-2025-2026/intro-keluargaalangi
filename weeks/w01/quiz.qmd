@@ -11,7 +11,7 @@ execute:
 
 - Implement your final answers in `weeks/w01/answers.py` as functions `q01()` ... `q12()`.
 - Use this Quarto document to explain reasoning and to run sanity checks.
-
+ 
 ## Setup import (so this works whether you render from repo root or from `weeks/w01/`)
 
 ```{python}
