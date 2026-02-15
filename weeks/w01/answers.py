@@ -3,6 +3,7 @@
 Instructor-only reference solution for validating the pipeline.
 """
 
+
 from __future__ import annotations
 
 import math
