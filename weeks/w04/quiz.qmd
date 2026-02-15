@@ -1,0 +1,19 @@
+---
+title: "Quiz w04 — Skeleton"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+Replace this with your real quiz.
+
+```{python}
+import sys
+from pathlib import Path
+cwd = Path.cwd().resolve()
+repo_root = cwd if (cwd / "weeks").exists() else cwd.parents[1]
+sys.path.insert(0, str(repo_root))
+from weeks.w04.answers import q01, q02, q03, q04, q05, q06, q07, q08, q09, q10, q11, q12
+```

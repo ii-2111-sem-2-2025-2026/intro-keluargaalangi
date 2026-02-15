@@ -1,0 +1,181 @@
+---
+title: "Quiz w01 — Sample Space & Basic Probability (12 tasks)"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Instructions
+
+- Implement your final answers in `weeks/w01/answers.py` as functions `q01()` ... `q12()`.
+- Use this Quarto document to explain reasoning and to run sanity checks.
+
+## Setup import (so this works whether you render from repo root or from `weeks/w01/`)
+
+```{python}
+import sys
+from pathlib import Path
+
+cwd = Path.cwd().resolve()
+repo_root = cwd if (cwd / "weeks").exists() else cwd.parents[1]
+sys.path.insert(0, str(repo_root))
+
+from weeks.w01.answers import q01,q02,q03,q04,q05,q06,q07,q08,q09,q10,q11,q12
+```
+
+---
+
+## Task 01 — At least one head
+
+A fair coin is flipped **3 times**.  
+Return the probability of getting **at least one head**.
+
+**Answer format:** float in [0,1].
+
+```{python}
+q01()
+```
+
+## Task 02 — Combinatorics
+
+From **10** students, we choose **3** students to be a committee (order does not matter).  
+Return the number of possible committees.
+
+**Answer format:** integer.
+
+```{python}
+q02()
+```
+
+## Task 03 — Conditional probability from counts
+
+In a class of 40 students:
+- 22 use Python (event P)
+- 18 use R (event R)
+- 10 use both Python and R (event P∩R)
+
+Return **P(Python | R)**.
+
+**Answer format:** float in [0,1].
+
+```{python}
+q03()
+```
+
+## Task 04 — Bayes (test accuracy)
+
+A disease has prevalence **P(D)=0.01**.  
+A test has sensitivity **P(+|D)=0.95** and specificity **P(-|not D)=0.90**.
+
+Return **P(D | +)**.
+
+**Answer format:** float in [0,1].
+
+```{python}
+q04()
+```
+
+## Task 05 — Expected value (discrete)
+
+A random variable X takes values 0,1,2,3 with probabilities:
+- P(X=0)=0.1
+- P(X=1)=0.2
+- P(X=2)=0.3
+- P(X=3)=0.4
+
+Return **E[X]**.
+
+**Answer format:** float.
+
+```{python}
+q05()
+```
+
+## Task 06 — Return a PMF list (Binomial)
+
+Let X ~ Binomial(n=4, p=0.3).  
+Return the list `[P(X=0), P(X=1), ..., P(X=4)]`.
+
+**Answer format:** list of length 5 with nonnegative floats summing to ~1.
+
+```{python}
+q06()
+```
+
+## Task 07 — Variance of a fair die
+
+Let X be the outcome of a fair 6-sided die (values 1..6).  
+Return **Var(X)**.
+
+**Answer format:** float.
+
+```{python}
+q07()
+```
+
+## Task 08 — Correlation from covariance
+
+Given:
+- Cov(X,Y) = 2
+- Var(X) = 9
+- Var(Y) = 16
+
+Return Corr(X,Y).
+
+**Answer format:** float in [-1,1].
+
+```{python}
+q08()
+```
+
+## Task 09 — Normal probability
+
+Let X ~ Normal(μ=10, σ=2).  
+Return **P(8 < X < 12)**.
+
+**Answer format:** float in [0,1].
+
+```{python}
+q09()
+```
+
+## Task 10 — Margin of error (known sigma)
+
+A population has **known σ = 4**.  
+You take a sample of size **n=25**.  
+For a **95%** confidence interval of the mean using z=1.96, return the **margin of error**.
+
+**Answer format:** float.
+
+```{python}
+q10()
+```
+
+## Task 11 — Two-sided p-value (z-test)
+
+A two-sided z-test yields statistic **z = 2.1**.  
+Return the **p-value**.
+
+**Answer format:** float in [0,1].
+
+```{python}
+q11()
+```
+
+## Task 12 — Monte Carlo estimate
+
+Use Monte Carlo to estimate **P(Z > 1.5)** where Z ~ Normal(0,1).  
+Use:
+- n = 200000 samples
+- seed = 123
+- numpy `default_rng(seed).standard_normal(n)`
+
+Return the estimated probability.
+
+**Answer format:** float in [0,1].
+
+```{python}
+q12()
+```
